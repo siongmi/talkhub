@@ -18,27 +18,25 @@
     <c:when test="${authentication}">
 <div>
     <a href="">마이페이지</a>
-    <a href="${pageContext.request.contextPath}/user/logout">로그아웃</a>
+    <a href="${pageContext.request.contextPath}/logout">로그아웃</a>
 </div>
     </c:when>
     <c:otherwise>
 <div>
-    <a href="${pageContext.request.contextPath}/user/login">로그인</a>
-    <a href="${pageContext.request.contextPath}/user/join">회원가입</a>
+    <form action="${pageContext.request.contextPath}/join">
+        <button type="submit">회원가입</button>
+    </form>
+
+    <form action="${pageContext.request.contextPath}/login">
+        <button type="submit">로그인</button>
+    </form>
 </div>
     </c:otherwise>
 </c:choose>
 <p>
-    TalkHub 에 오신것을 환영합니다람쥐🐿
+    TalkHub 에 오신것을 환영합니다람쥐
 </p>
 
-<form action="${pageContext.request.contextPath}/join">
-    <button type="submit">회원가입</button>
-</form>
-
-<form action="${pageContext.request.contextPath}/login">
-    <button type="submit">로그인</button>
-</form>
 
 </body>
 </html>
