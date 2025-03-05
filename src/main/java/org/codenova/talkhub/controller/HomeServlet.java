@@ -15,17 +15,29 @@ public class  HomeServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        /*
         HttpSession session = req.getSession();
         String sid = session.getId();
         boolean f = session.isNew();
         long ct = session.getCreationTime();
+        long now = System.currentTimeMillis();
+        long lat = session.getLastAccessedTime();
 
         System.out.println("session info ==============");
-        System.out.println("sessionId" + sid);
-        System.out.println("isNew" + f);
-        System.out.println("createTime" + ct);
+        System.out.println("sessionId: " + sid);
+        System.out.println("isNew = " + f);
+        System.out.println("createTime = " + ct);
+        System.out.println("now - creationTime = " + (now-ct));
+        System.out.println("now - creationTime = " + (now-lat));
 
-        if(Math.random()>0.5){
+        // session 저장: setAttribute(String key, Object value)
+        // session 값확인: getAttribute(String key)
+        // session 겂삭제: removeAttribute(String key)
+         */
+
+        HttpSession session = req.getSession();
+
+        if(session.getAttribute("user") != null){
             req.setAttribute("authentication", true);
         }else{
             req.setAttribute("authentication", false);

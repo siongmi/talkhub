@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.codenova.talkhub.model.deo.UserDAO;
 import org.codenova.talkhub.model.vo.User;
 
@@ -16,19 +17,29 @@ public class LoginProceedServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
         String id = req.getParameter("id");
         String password = req.getParameter("password");
 
-        User user = UserDAO.findById(id);
+        UserDAO userDAO = new UserDAO();
+        User found = userDAO.findById(id);
 
-        if(user != null) {
-            if (password.equals(user.getPassword())) {
+        if(found == null){
+            //id에 해당하는 정보가 없다.
+            req.getRequestDispatcher("/WEB-INF/views/user/login-fail.jsp").forward(req,resp);
+
+        }else {
+            if(found.getPassword().equals(password)){
+                //인증성공
+                HttpSession session = req.getSession();
+                session.setAttribute("user",found);
                 resp.sendRedirect(req.getContextPath() + "/index");
-            }else{
 
+            }else {
+                //인증실패
+                req.getRequestDispatcher("/WEB-INF/views/user/login-fail.jsp").forward(req,resp);
             }
-        }else{
-            req.getRequestDispatcher("WEB-INF/views/login-fail.jsp").forward(req,resp);
         }
     }
 }
+
