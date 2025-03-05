@@ -2,10 +2,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>TolkHub</title>
+    <title>TalkHub</title>
 </head>
 <body>
-<h1>TolkHub</h1>
+<h1>TalkHub</h1>
 <h3>토크허브에 회원가입하기</h3>
 <form action="${pageContext.request.contextPath}/join-proceed">
     <p>

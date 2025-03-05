@@ -1,14 +1,13 @@
-package org.codenova.tolkhub.controller.user;
+package org.codenova.talkhub.controller.user;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.codenova.tolkhub.model.deo.UserDAO;
+import org.codenova.talkhub.model.deo.UserDAO;
 
 import java.io.IOException;
-import java.sql.PreparedStatement;
 
 @WebServlet("/join-proceed")
 public class JoinProceedServlet extends HttpServlet {
@@ -28,11 +27,11 @@ public class JoinProceedServlet extends HttpServlet {
                 nickname,
                 gender,
                 birth);
-        if (result){
+        if (result) {
             resp.sendRedirect(req.getContextPath() + "/index");
-        }else{
-            req.getRequestDispatcher("WEB-INF/views/join-fail.jsp").forward(req,resp);
+        } else {
+            req.getRequestDispatcher("WEB-INF/views/join-fail.jsp").forward(req, resp);
         }
-        req.getRequestDispatcher("/WEB-INT/views/join-proceed.jsp").forward(req,resp);
+
     }
 }

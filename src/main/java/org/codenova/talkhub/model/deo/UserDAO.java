@@ -1,6 +1,6 @@
-package org.codenova.tolkhub.model.deo;
+package org.codenova.talkhub.model.deo;
 
-import org.codenova.tolkhub.model.vo.User;
+import org.codenova.talkhub.model.vo.User;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,7 +16,7 @@ public class UserDAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(
-                    "jdbc:mysql://database-1.cdu6gmecszv2.ap-northeast-2.rds.amazonaws.com:3306/talkhub",
+                    "jdbc:mysql://database-1.c1c0momec8jp.ap-northeast-2.rds.amazonaws.com:3306/talkhub",
                     "admin",
                     "1q2w3e4r");
 
@@ -42,7 +42,7 @@ public class UserDAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(
-                    "jdbc:mysql://database-1.cdu6gmecszv2.ap-northeast-2.rds.amazonaws.com:3306/talkhub",
+                    "jdbc:mysql://database-1.c1c0momec8jp.ap-northeast-2.rds.amazonaws.com:3306/talkhub",
                     "admin",
                     "1q2w3e4r");
 

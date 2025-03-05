@@ -1,12 +1,12 @@
-package org.codenova.tolkhub.controller.user;
+package org.codenova.talkhub.controller.user;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.codenova.tolkhub.model.deo.UserDAO;
-import org.codenova.tolkhub.model.vo.User;
+import org.codenova.talkhub.model.deo.UserDAO;
+import org.codenova.talkhub.model.vo.User;
 
 import java.io.IOException;
 

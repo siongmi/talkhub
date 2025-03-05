@@ -1,4 +1,4 @@
-package org.codenova.tolkhub.model.vo;
+package org.codenova.talkhub.model.vo;
 
 import java.util.Date;
 
