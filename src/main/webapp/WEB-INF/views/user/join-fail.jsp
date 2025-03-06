@@ -14,20 +14,25 @@
 <body>
     <h2>토크허브에 회원가입하기</h2>
         <form action="${pageContext.request.contaxtPath}/join-proceed" method="post"></form>
+    <div>
 <label>아이디</label>
 <div>
     <input type="text" name="id"/>
 </div>
 <c:if test="${idError !=null}"/>
     <div style="color:darkred; font-size:small">${idError}</div>
+    </div>
 
+    <div>
     <label>비밀번호</label>
 <div>
     <input type="password" name="password"/>
 </div>
 <c:if test="${passwordError !=null}"/>
     <div style="color:darkred; font-size:small">${passwordError}</div>
+    </div>
 
+    <div>
     <label>닉네임</label>
 
 <div>
@@ -35,14 +40,18 @@
 </div>
 <c:if test="${nicknameError !=null}"/>
     <div style="color:darkred; font-size:small">${nicknameError}</div>
+    </div>
+    <div>
     <label>성별</label>
 <div>
-    <vabel><input type="radio" value="남" name="gender"/>남</vabel>
-    <vabel><input type="radio" value="여" name="gender"/>여</vabel>
-    <vabel><input type="radio" value="비공개" name="gender"/>비공개</vabel>
+    <label><input type="radio" value="남" name="gender"/>남</label>
+    <label><input type="radio" value="여" name="gender"/>여</label>
+    <label><input type="radio" value="비공개" name="gender"/>비공개</label>
 </div>
 <c:if test="${genderError !=null}"/>
     <div style="color:darkred; font-size:small">${genderError}</div>
+    </div>
+    <div>
     <label>출생연도</label>
 <div>
     <select name="birth">
@@ -51,6 +60,7 @@
         </c:forEach>
     </select>
 </div>
+    </div>
 <button type="submit">회원가입</button>
 </form>
 </body>
