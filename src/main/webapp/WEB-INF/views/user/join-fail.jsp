@@ -13,14 +13,11 @@
 </head>
 <body>
 <h1>TalkHub</h1>
-<div>
     <h2>토크허브에 회원가입하기</h2>
         <p>
             <b>Talkhub</b>에 가입하고 자유롭게 이야기 하세요!
         </p>
-        <form action="${pageContext.request.contaxtPath}/user/join-proceed"method="post"></form>
-
-</div>
+        <form action="${pageContext.request.contaxtPath}/join-proceed" method="post"></form>
 <label>아이디</label>
 <div>
     <input type="text" name="id">
