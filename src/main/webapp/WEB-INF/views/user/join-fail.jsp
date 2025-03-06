@@ -20,7 +20,7 @@
         <form action="${pageContext.request.contaxtPath}/join-proceed" method="post"></form>
 <label>아이디</label>
 <div>
-    <input type="text" name="id">
+    <input type="text" name="id"/>
 </div>
 <c:if test="${idError !=null}">
     <div style="color:darkred; font-size:small">${idError}</div>
@@ -28,7 +28,7 @@
 
     <label>비밀번호</label>
 <div>
-    <input type="password" name="password">
+    <input type="password" name="password"/>
 </div>
 <c:if test="${passwordError !=null}">
     <div style="color:darkred; font-size:small">${passwordError}</div>
@@ -37,7 +37,7 @@
     <label>닉네임</label>
 
 <div>
-    <input type="text" name="nickname">
+    <input type="text" name="nickname"/>
 </div>
 <c:if test="${nicknameError !=null}">
     <div style="color:darkred; font-size:small">${nicknameError}</div>
