@@ -13,7 +13,7 @@
 </head>
 <body>
     <h2>토크허브에 회원가입하기</h2>
-        <form action="${pageContext.request.contaxtPath}/join-proceed" method="post">
+        <form action="${pageContext.request.contextPath}/join-proceed" method="post">
     <div>
 <label>아이디</label>
 <div>
