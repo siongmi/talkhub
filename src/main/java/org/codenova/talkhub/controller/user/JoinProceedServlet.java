@@ -23,7 +23,7 @@ public class JoinProceedServlet extends HttpServlet {
             req.setAttribute("idError", "아이디는 4글자 이상입니다");
         }
         String password = req.getParameter("password");
-        if(password.length()<6){
+        if(password.length()<=6){
             hasError = true;
             req.setAttribute("passwordError", "비밀번호는 4글자 이상입니다");
         }
@@ -39,8 +39,6 @@ public class JoinProceedServlet extends HttpServlet {
         }
         int birth = Integer.parseInt(req.getParameter("birth"));
 
-
-        UserDAO userDao = new UserDAO();
         UserDAO userDAO = new UserDAO();
         User found = userDAO.findById(id);
         if(found != null){
@@ -57,8 +55,7 @@ public class JoinProceedServlet extends HttpServlet {
             req.getRequestDispatcher("WEB-INF/views/user/join-fail.jsp").forward(req, resp);
         }else {
 
-            boolean result = UserDAO.create(
-                    id, password, nickname, gender, birth);
+            boolean result = UserDAO.create(id, password, nickname, gender, birth);
             if (result) {
                 resp.sendRedirect(req.getContextPath() + "/index");
             } else {
