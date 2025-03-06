@@ -22,35 +22,31 @@
 <div>
     <input type="text" name="id"/>
 </div>
-<c:if test="${idError !=null}">
+<c:if test="${idError !=null}"/>
     <div style="color:darkred; font-size:small">${idError}</div>
-</c:if>
 
     <label>비밀번호</label>
 <div>
     <input type="password" name="password"/>
 </div>
-<c:if test="${passwordError !=null}">
+<c:if test="${passwordError !=null}"/>
     <div style="color:darkred; font-size:small">${passwordError}</div>
-</c:if>
 
     <label>닉네임</label>
 
 <div>
     <input type="text" name="nickname"/>
 </div>
-<c:if test="${nicknameError !=null}">
+<c:if test="${nicknameError !=null}"/>
     <div style="color:darkred; font-size:small">${nicknameError}</div>
-</c:if>
     <label>성별</label>
 <div>
     <vabel><input type="radio" value="남" name="gender"/>남</vabel>
     <vabel><input type="radio" value="여" name="gender"/>여</vabel>
     <vabel><input type="radio" value="비공개" name="gender"/>비공개</vabel>
 </div>
-<c:if test="${genderError !=null}">
+<c:if test="${genderError !=null}"/>
     <div style="color:darkred; font-size:small">${genderError}</div>
-</c:if>
     <label>출생연도</label>
 <div>
     <select name="birth">
