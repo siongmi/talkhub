@@ -6,14 +6,31 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
-    <title>로그인</title>
+    <title>TalkHub</title>
 </head>
 <body>
-<div class="error-message">
-  로그인에 실패하였습니다<br>
-  <a href="${pageContext.request.contextPath}/login">로그인창으로 돌아가시겠습니까?</a>
-</div>
+<h1>TalkHub</h1>
+<h3>로그인</h3>
+<form action="${pageContext.request.contextPath}/login-proceed">
+    <p>
+        <label>아이디</label>
+    <div>
+        <input type="text" name="id">
+    </div>
+    </p>
+    <p>
+        <label>비밀번호</label>
+    <div>
+        <input type="password" name="password">
+    </div>
+    </p>
+    <p style="color:red; font-size:small">
+        ${error}
+    </p>
+    <button type="submit">로그인</button>
+</form>
 </body>
 </html>
