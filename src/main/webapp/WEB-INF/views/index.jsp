@@ -11,9 +11,16 @@
 <html>
 <head>
     <title>TalkHub</title>
+    <style>
+        .color-primary {
+            color: powderblue;
+            font-size: large;
+        }
+    </style>
 </head>
 <body>
-<h1>TalkHub</h1>
+<h1 style="color:pink">TalkHub</h1>
+<p>토크허브를 통해 사람들과 의견을 나누세요</p>
 <c:choose>
     <c:when test="${authentication}">
 <div>
@@ -36,7 +43,5 @@
 <p>
     TalkHub 에 오신것을 환영합니다람쥐
 </p>
-
-
 </body>
 </html>
