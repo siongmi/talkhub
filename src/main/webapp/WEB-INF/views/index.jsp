@@ -16,6 +16,9 @@
             color: powderblue;
             font-size: large;
         }
+        .underline {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -40,7 +43,7 @@
 </div>
     </c:otherwise>
 </c:choose>
-<p>
+<p class="color-primary">
     TalkHub 에 오신것을 환영합니다람쥐
 </p>
 </body>
