@@ -29,9 +29,9 @@
     <p>
         <label>성별</label>
     <div>
-        <vabel><input type="radio" value="남" name="gender"/>남</vabel>
-        <vabel><input type="radio" value="여" name="gender"/>여</vabel>
-        <vabel><input type="radio" value="비공개" name="gender"/>비공개</vabel>
+        <label><input type="radio" value="남" name="gender"/>남</label>
+        <label><input type="radio" value="여" name="gender"/>여</label>
+        <label><input type="radio" value="비공개" name="gender"/>비공개</label>
     </div>
     </p>
     <p>
