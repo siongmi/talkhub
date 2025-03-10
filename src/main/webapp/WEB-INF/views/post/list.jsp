@@ -67,13 +67,41 @@
             color: #ffb3d9; /* 글씨에 미세한 핑크 강조 */
         }
 
+        /* 스타일링된 글쓰기 버튼 */
+        button {
+            background-color: #ff66b3; /* 핑크색 버튼 */
+            color: white; /* 흰색 텍스트 */
+            font-size: 1.5em;
+            font-family: 'Cursive', sans-serif;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px; /* 동그란 모서리 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+            cursor: pointer;
+            transition: all 0.3s ease-in-out; /* 부드러운 애니메이션 */
+        }
+
+        /* 버튼 마우스 오버시 효과 */
+        button:hover {
+            background-color: #ff3385; /* 더 진한 핑크색으로 변화 */
+            transform: scale(1.1); /* 버튼 크기 약간 확대 */
+        }
+
+        button:focus {
+            outline: none; /* 포커스시 테두리 없애기 */
+        }
     </style>
+
 </head>
 <body>
 
 <h1>TalkHub</h1>
 <hr/>
 <h2>TalkHub 게시판</h2>
+<form action="${pageContext.request.contextPath}/post/write" method="post">
+    <p><button type = "submit">글쓰기</button></p>
+</form>
+
 <ul>
     <c:forEach var="one" items="${posts}">
         <li>
@@ -86,6 +114,5 @@
         </li>
     </c:forEach>
 </ul>
-
 </body>
 </html>
