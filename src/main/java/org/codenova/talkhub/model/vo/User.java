@@ -16,7 +16,7 @@ public class User {
     private String id;
     private String password;
     private String nickname;
-    private String gander;
+    private String gender;
     private int birth;
     private Date createAt;
 
