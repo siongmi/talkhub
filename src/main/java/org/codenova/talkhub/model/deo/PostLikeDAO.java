@@ -1,11 +1,10 @@
 package org.codenova.talkhub.model.deo;
 
-import org.codenova.talkhub.model.vo.Post;
+
 import org.codenova.talkhub.model.vo.PostLike;
 import org.codenova.talkhub.util.ConnectionFactory;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -17,11 +16,10 @@ public class PostLikeDAO {
 
         boolean result = false;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(
-                    "jdbc:mysql://database-1.c1c0momec8jp.ap-northeast-2.rds.amazonaws.com:3306/talkhub", "admin", "1q2w3e4r");
+            Connection conn =ConnectionFactory.open();
 
-            PreparedStatement ps = conn.prepareStatement("insert into posts values( null,?,?,now() )");
+
+            PreparedStatement ps = conn.prepareStatement("insert into post_likes values( null,?,?,now() )");
             ps.setString(1, one.getUserId());
             ps.setInt(2, one.getPostId());
 
@@ -39,7 +37,7 @@ public class PostLikeDAO {
 
     public List<PostLike> findByUserId(String userId) {
 
-        List<PostLike> postlike = new ArrayList<PostLike>();
+        List<PostLike> postlike = new ArrayList<>();
         try {
             Connection conn = ConnectionFactory.open();
 
@@ -57,7 +55,7 @@ public class PostLikeDAO {
 
                 postlike.add(one);
             }
-           
+
         } catch (Exception e) {
             System.out.println("PostLikeDAO.findByUserId : " + e.toString());
         }

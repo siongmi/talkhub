@@ -37,12 +37,15 @@ public class PostLikes extends HttpServlet {
             PostDAO dao = new PostDAO();
             dao.likesById(id);
 
-            PostLike log = PostLike.builder().userId(requester.getId()).postId(id).build();
+            PostLike log = PostLike.builder().postId(id).userId(requester.getId()).build();
             postlikedao.create(log);
         }
+        PostDAO dao = new PostDAO();
+        Post one = dao.findById(id);
 
-        resp.sendRedirect(req.getContextPath()+ "/post/view?id=" +id);
+        req.setAttribute("post", one);
 
-        }
+        req.getRequestDispatcher("/WEB-INF/views/post/view.jsp").forward(req, resp);
+
     }
-
+}
